@@ -15,7 +15,9 @@ const Login = () => {
     const handleSubmit = e => {
         e.preventDefault();
         axios.post('http://localhost:5000/api/login', credentials)
-        .then(res => console.log(res))
+        .then(res => {
+            localStorage.setItem('token', res.data.payload)
+        })
         .catch(err => console.log(err))
     }
     console.log(credentials)
@@ -23,7 +25,7 @@ const Login = () => {
         <div>
             <h2>Login Friends</h2>
             <label>Username: <input type="text" name="username" onChange={handleChange} /></label>
-            <label>Password: <input type="text" name="email" onChange={handleChange} /></label>
+            <label>Password: <input type="text" name="password" onChange={handleChange} /></label>
             <button onClick={handleSubmit}>Login</button>
         </div>
     );
