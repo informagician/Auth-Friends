@@ -131,3 +131,11 @@ p {
   font-family: Arial, Helvetica, sans-serif;
   margin: 5px 0;
 }
+
+.delete {
+  color:red;
+  font-size: 12px;
+  margin-left: 5px;
+  font-weight: normal;
+  cursor: pointer;
+}
