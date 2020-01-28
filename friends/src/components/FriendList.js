@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import AddFriend from './AddFriend';
 
 const FriendList = () => {
 
     const [ friends, setFriends ] = useState([])
+    const [ update, setUpdate ] = useState();
 
     useEffect(() => {
         
@@ -13,7 +15,7 @@ const FriendList = () => {
             setFriends(res.data)
         })
         .catch(err => console.log(err))
-    }, [])
+    }, [update])
     
     return(
         <div>
@@ -25,6 +27,7 @@ const FriendList = () => {
                     <p>Email: {friend.email}</p>
                 </div>
             ))}
+            <AddFriend setUpdate={setUpdate}/>
         </div>
     );
 }
