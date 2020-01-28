@@ -1,7 +1,7 @@
 import React from 'react';
 //import logo from './logo.svg';
 import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import './App.css';
+//import './App.css';
 import Login from './components/Login'
 
 function App() {
@@ -17,8 +17,11 @@ function App() {
           <Link to="/friendlist">Friend List</Link>
         </li>
       </ul>
+        <Switch>
+          <Route path="/login" component={Login} />
+          <Route component={Login} />
+        </Switch>
       </Router>
-        <Login />
     </div>
   );
 }
