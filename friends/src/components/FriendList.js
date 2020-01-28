@@ -18,16 +18,20 @@ const FriendList = () => {
     }, [update])
     
     return(
-        <div>
-            <h2>Friend List</h2>
-            {friends.map(friend => (
-                <div key={friend.id}>
-                    <h3>{friend.name}</h3>
-                    <p>Age: {friend.age}</p>
-                    <p>Email: {friend.email}</p>
+        <div className="container">
+            <h1>Friend List</h1>
+            <main>
+                <div className="friends">
+                    {friends.map(friend => (
+                        <div key={friend.id}>
+                            <p className="name">{friend.name}</p>
+                            <p>Age: {friend.age}</p>
+                            <p>Email: {friend.email}</p>
+                        </div>
+                    ))}
                 </div>
-            ))}
-            <AddFriend setUpdate={setUpdate}/>
+                <AddFriend setUpdate={setUpdate}/>
+            </main>
         </div>
     );
 }

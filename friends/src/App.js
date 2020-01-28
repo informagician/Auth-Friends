@@ -1,6 +1,6 @@
 import React from 'react';
 //import logo from './logo.svg';
-import { BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, NavLink} from 'react-router-dom';
 //import './App.css';
 import Login from './components/Login'
 import PrivateRoute from './components/PrivateRoute';
@@ -11,14 +11,10 @@ function App() {
     <div className="App">
 
       <Router>
-      <ul>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
-        <li>
-          <Link to="/friendlist">Friend List</Link>
-        </li>
-      </ul>
+        <nav>
+          <NavLink to="/login" activeClassName="selected">Login</NavLink>
+          <NavLink to="/friendlist" activeClassName="selected">Friend List</NavLink>
+        </nav>
         <Switch>
           <PrivateRoute path="/friendlist" component={FriendList} />
           <Route path="/login" component={Login} />

@@ -23,10 +23,10 @@ const Login = props => {
     }
     console.log(credentials)
     return(
-        <div>
+        <div className="login">
             <h2>Login Friends</h2>
             <label>Username: <input type="text" name="username" onChange={handleChange} /></label>
-            <label>Password: <input type="text" name="password" onChange={handleChange} /></label>
+            <label>Password: <input type="password" name="password" onChange={handleChange} /></label>
             <button onClick={handleSubmit}>Login</button>
         </div>
     );

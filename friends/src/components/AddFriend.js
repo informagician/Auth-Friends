@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import axios from 'axios';
 import {axiosWithAuth} from '../utils/axiosWithAuth'
 
 const AddFriend = props => {
@@ -22,7 +21,7 @@ const AddFriend = props => {
     }
     console.log(newFriend)
     return(
-        <div>
+        <div className="add">
             <h2>Add Friends</h2>
             <label>Name: <input type="text" name="name" onChange={handleChange} /></label>
             <label>Email: <input type="text" name="email" onChange={handleChange} /></label>
