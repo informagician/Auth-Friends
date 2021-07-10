@@ -1,10 +1,10 @@
+equire('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const port = 5000;
+const port = process.env.PORT;
 const app = express();
-const token =
-  'esfeyJ1c2VySWQiOiJiMDhmODZhZi0zNWRhLTQ4ZjItOGZhYi1jZWYzOTA0NUIhkufemQifQ';
+const token = process.env.TOKEN;
 
 let nextId = 7;
 
